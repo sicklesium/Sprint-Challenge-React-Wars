@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import StarWars from "./components/swCharacters";
+import StarWars from "./components/Characters";
 import styled from "styled-components";
 
 const Centered = styled.div`
-  max-width: 300px;
   margin: auto;
+  width: 900px;
 `;
 
 const App = () => {

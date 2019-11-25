@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SwCard from "./swCards";
-import { Container, Row } from "reactstrap";
+import SwCard from "./Cards";
+import { Container } from "reactstrap";
 import styled from "styled-components";
 
 const Boxed = styled.div`
@@ -11,6 +11,14 @@ const Boxed = styled.div`
   padding: 3%;
   opacity: 80%;
   width: 300px;
+  border-radius: 5px;
+`;
+
+const Flexed = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 825px;
+  margin: auto;
 `;
 
 export default function StarWars() {
@@ -30,25 +38,21 @@ export default function StarWars() {
 
   return (
     <Container>
-      <Row>
+      <Flexed>
         {characters.map(item => {
 
           return (
             <Boxed>
-              <div class="row">
-                <div class="col">
                   <SwCard
                     character={item.name}
                     height={item.height}
                     weight={item.mass}
                     hair={item.hair_color}
                   />
-                </div>
-              </div>
             </Boxed>
           );
         })}
-      </Row>
+      </Flexed>
     </Container>
   );
 }
